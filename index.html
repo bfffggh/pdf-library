@@ -1,6 +1,6 @@
 <link rel="icon" type="image/x-icon" href="IconGroup90.ico">
 <title>PDF Library</title>
-<style>body{font-family:Consolas,monaco,monospace;color:#fff;background-color:lightblue;font-size:18px}a{background-color:green;border-radius:6px;color:white;text-decoration:none}x{color:lightblue}</style>
+<style>.h{display:none}body{font-family:Consolas,monaco,monospace;color:#fff;background-color:lightblue;font-size:18px}a{background-color:green;border-radius:6px;color:white;text-decoration:none}x{color:lightblue}</style>
 <script>
 const xhr = new XMLHttpRequest();
     repo = 'bfffggh/pdf-library'
@@ -10,8 +10,18 @@ const xhr = new XMLHttpRequest();
 
     xhr.onload = function() {
         const data = JSON.parse(this.response);
-        for(i=0;i<data.length;i++){if(data[i].name!='index.html'){if(data[i].name!='IconGroup90.ico'){document.getElementById('a').innerHTML+=data[i].name+' [File size: '+data[i].size+' bytes, SHA1: '+data[i].sha+']<x>======</x><a href="https://raw.githubusercontent.com/'+repo+'/main/'+data[i].name+'" download target="_blank">Download</a><br><br>'}}}
+        for(i=0;i<data.length;i++){if(data[i].name!='index.html'){if(data[i].name!='IconGroup90.ico'){document.getElementById('a').innerHTML+='<y class="y">'+data[i].name+' [File size: '+data[i].size+' bytes, SHA1: '+data[i].sha+']<x>======</x><a href="https://raw.githubusercontent.com/'+repo+'/main/'+data[i].name+'" download target="_blank">Download</a><br><br></y>'}}}
     };
     
 xhr.send();
+function search(q) {
+   const o = document.getElementsByClassName('y')
+     for (var i = 0; i < o.length; i++) {
+        if(o[i].innerHTML.toLowerCase().includes(q.toLowerCase())) {
+            o[i].classList.remove("h");
+        } else {
+            o[i].classList.add("h");
+        }
+    }
+}
 </script><b><center id="a"><img src="IconGroup90.ico" width="48px" height="48px" style="display:inline"></img><h1 style="display:inline;vertical-align:super">PDF Library</h1><br></center></b>
