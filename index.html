@@ -11,18 +11,21 @@ const xhr = new XMLHttpRequest();
 
     xhr.onload = function() {
         const data = JSON.parse(this.response);
-        for(i=0;i<data.length;i++){if(data[i].name!='index.html'){if(data[i].name!='IconGroup90.ico'){document.getElementById('a').innerHTML+='<y class="y">'+data[i].name+' [File size: '+data[i].size+' bytes, SHA1: '+data[i].sha+']</y><x>======</x><a href="https://raw.githubusercontent.com/'+repo+'/main/'+data[i].name+'" download target="_blank">Download</a><br><br>'}}}
+        for(i=0;i<data.length;i++){if(data[i].name!='index.html'){if(data[i].name!='IconGroup90.ico'){document.getElementById('a').innerHTML+='<y class="y">'+data[i].name+' [File size: '+data[i].size+' bytes, SHA1: '+data[i].sha+']</y><y class="o"><x>======</x><a href="https://raw.githubusercontent.com/'+repo+'/main/'+data[i].name+'" download target="_blank">Download</a><br><br></y>'}}}
     };
     
 xhr.send();
 function search(q) {
     
    const o = document.getElementsByClassName('y')
+   const b = document.getElementsByClassName('o')
      for (var i = 0; i < o.length; i++) {
         if(o[i].innerHTML.toLowerCase().includes(q.toLowerCase())) {
             o[i].classList.remove("h");
+            b[i].classList.remove("h");
         } else {
             o[i].classList.add("h");
+            b[i].classList.add("h");
         }
     }
 }
