@@ -16,13 +16,16 @@ const xhr = new XMLHttpRequest();
     
 xhr.send();
 function search(q) {
+    
    const o = document.getElementsByClassName('y')
      for (var i = 0; i < o.length; i++) {
+         if(q!=''){
         if(o[i].innerHTML.toLowerCase().includes(q.toLowerCase())) {
             o[i].classList.remove("h");
         } else {
             o[i].classList.add("h");
         }
+         }else{o[i].classList.remove("h")}
     }
 }
 </script><b><center id="a"><img src="IconGroup90.ico" width="48px" height="48px" style="display:inline"></img><h1 style="display:inline;vertical-align:super">PDF Library</h1><br><input id="sb" placeholder="Search here." oninput="search(document.getElementById('sb').value)" style="highlight:none;font-family:Consolas,monaco,monospace"></input><br><br></center></b>
