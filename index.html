@@ -1,3 +1,5 @@
+<link rel="icon" type="image/x-icon" href="IconGroup90.ico">
+<title>PDF Library</title>
 <style>body{font-family:Consolas,monaco,monospace;color:#fff;background-color:lightblue;font-size:18px}a{background-color:green;border-radius:6px;color:white;text-decoration:none}x{color:lightblue}</style>
 <script>
 const xhr = new XMLHttpRequest();
@@ -8,7 +10,7 @@ const xhr = new XMLHttpRequest();
 
     xhr.onload = function() {
         const data = JSON.parse(this.response);
-        for(i=0;i<data.length;i++){if(data[i].name!='index.html'){document.getElementById('a').innerHTML+=data[i].name+' [File size: '+data[i].size+' bytes, SHA1: '+data[i].sha+']<x>======</x><a href="https://raw.githubusercontent.com/'+repo+'/main/'+data[i].name+'" download target="_blank">Download</a><br><br>'}}
+        for(i=0;i<data.length;i++){if(data[i].name!='index.html'){if(data[i].name!='IconGroup90.ico'){document.getElementById('a').innerHTML+=data[i].name+' [File size: '+data[i].size+' bytes, SHA1: '+data[i].sha+']<x>======</x><a href="https://raw.githubusercontent.com/'+repo+'/main/'+data[i].name+'" download target="_blank">Download</a><br><br>'}}}
     };
     
 xhr.send();
